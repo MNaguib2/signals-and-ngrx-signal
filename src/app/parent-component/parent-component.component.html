@@ -1,0 +1,37 @@
+<div>
+  <h1>Parent Component</h1>
+  <label>
+    First Name:
+    <input type="text" [value]="firstName()" (input)="setValueFirstName($event)" />
+  </label>
+  <br />
+  <label>
+    Last Name:
+    <input type="text" [value]="lastName()" (input)="setValueLastName($event)" />
+  </label>
+  <label>
+    Message:
+    <input type="text" [(ngModel)]="message"/>
+  </label>
+
+
+  <!-- Pass signals as inputs to the child component -->
+  <app-child-component [firstName]="firstName" [lastName]="lastName" [message]="message">
+    <p #singleItem class="single-item">This is the single projected item.</p>
+
+    <div class="multiple-items">
+      <p #multipleItems>This is projected item 1.</p>
+      <p #multipleItems>This is projected item 2.</p>
+      <p #multipleItems>This is projected item 3.</p>
+    </div>
+  </app-child-component>
+</div>
+
+<div style="display: flex;justify-content: center;flex-direction: column;">
+  <h1>example model</h1>
+  <app-model-signal [(checked)]="isChecked"></app-model-signal>
+  <p>Checkbox is {{ isChecked ? 'checked' : 'unchecked' }}</p>
+  <button (click)="toggle()">bind value from parent </button>
+</div>
+
+<!--input signal can bind data from parent to child but model signal bind data two way-->

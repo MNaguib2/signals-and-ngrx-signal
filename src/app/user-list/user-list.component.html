@@ -1,0 +1,22 @@
+<!-- user-list.component.html -->
+ <h1>T signal</h1>
+<div *ngIf="errorSignal() as error">
+  <p>Error: {{ error }}</p>
+</div>
+<!-- @if(usersSignal){
+  <h1>
+    sdfsdf
+  {{ usersSignal() }}
+</h1>
+} -->
+@if(usersSignal && usersSignal().message && usersSignal().message.length){
+<div>
+  <ul>
+    <li *ngFor="let user of usersSignal().message">
+      {{ user | json }}
+    </li>
+  </ul>
+</div>
+}@else {
+  <p>Loading users...</p>
+}

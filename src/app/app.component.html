@@ -1,0 +1,54 @@
+<!-- Placeholder to insert the template dynamically -->
+<div #container></div>
+
+<nav>
+  <ul style="display: flex;float: left;width: 100%;list-style-type: none;">
+    <li><a [routerLink]="['/signal-input']">signal input</a></li>
+    <li><a routerLink="/ToSingle">To Single</a></li>
+  </ul>
+</nav>
+
+<h1>count</h1>
+
+<h3>{{ count() }}</h3>
+<h3>{{ doubleCount() }}</h3>
+
+<span style="display: flex;gap: 10px;">
+  <button type="button" (click)="increment()">increment</button>
+  <button type="button" (click)="decrement()">decrement</button>
+</span>
+
+<span style="display: flex;flex-direction: column;">
+  <h1>lang</h1>
+  <span style="display: flex;gap: 10px">
+    <button type="button" (click)="changeLang('ar')">ar</button>
+    <button type="button" (click)="changeLang('en')">en</button>
+  </span>
+</span>
+
+<h3>{{ 'hello' | translate}}</h3>
+
+
+
+<h1 #interrupted_viewChild>
+  interrupted
+</h1>
+<ng-template #viewChild>
+  <h1>sdjhfjksdfh</h1>
+</ng-template>
+
+<input type="checkbox" (change)="toggleInterrupted()">
+
+<span style="display: flex;gap: 10px;">
+  <button type="button" (click)="incrementInterrupted()">increment</button>
+  <button type="button" (click)="decrementInterrupted()">decrement</button>
+</span>
+
+<p>{{ conditionalCount() }}</p>
+
+<router-outlet></router-outlet>
+
+<p #interrupted_viewChildren>interrupted_viewChildren</p>
+<p #interrupted_viewChildren>interrupted_viewChildren</p>
+<p #interrupted_viewChildren>interrupted_viewChildren</p>
+<p #interrupted_viewChildren>interrupted_viewChildren</p>

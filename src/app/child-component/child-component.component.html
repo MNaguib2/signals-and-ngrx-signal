@@ -1,0 +1,14 @@
+<p>child-component works!</p>
+<div>
+  <h2>Child Component</h2>
+  <p>First Name: {{ firstName() }}</p>
+  <p>Last Name: {{ lastName() }}</p>
+  <p>Message: {{ message() }}</p>
+</div>
+
+
+<h2>Child Component</h2>
+<p>Projected single element content:</p>
+<ng-content select=".single-item"></ng-content>
+<h1>Projected multiple elements content:</h1>
+<ng-content select=".multiple-items"></ng-content>
